@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Rania El Hichami</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        }
+
+        :root {
+        --main-orange: #ff6600;
+        --light-orange: #ff914d;
+        --dark-gray: #333;
+        --light-gray: #f5f5f5;
+        --white: #fff;
+        }
+
+        /* Header */
+        header {
+        background-color: var(--main-orange);
+        color: var(--white);
+        width: 100%;
+        }
+
+        .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2em;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        }
+
+        .logo {
+        width: 250px;
+        height: auto;
+        }
+
+        .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        }
+
+        .photo-rania {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 1em;
+        }
+
+        h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        }
+
+        .subtitle {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+        }
+
+        /* Navigation */
+        nav {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        nav a {
+        color: var(--white);
+        text-decoration: none;
+        padding: 0.8em 1.5em;
+        background-color: var(--light-orange);
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+        background-color: var(--main-orange);
+        }
+
+        /* Sections */
+        .section {
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 3em 1em;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        }
+
+        .section h2 {
+        color: var(--main-orange);
+        font-size: 1.8em;
+        margin-bottom: 1em;
+        }
+
+        .section p {
+        line-height: 1.6;
+        color: var(--dark-gray);
+        margin-bottom: 1em;
+        }
+
+        /* Carousel */
+        .carousel {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+        }
+
+        .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+        min-width: 100%;
+        padding: 2em;
+        background-color: var(--light-gray);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .carousel-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        }
+
+        .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: var(--main-orange);
+        color: var(--white);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+        }
+
+        .carousel-control.prev {
+        left: 10px;
+        }
+
+        .carousel-control.next {
+        right: 10px;
+        }
+
+        .carousel-control:hover {
+        background-color: var(--light-orange);
+        }
+
+        /* Footer */
+        footer {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 1.5em;
+        text-align: center;
+        margin-top: 2em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+        .header-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 200px;
+        }
+        
+        nav {
+            flex-direction: column;
+        }
+        
+        nav a {
+            width: 100%;
+            text-align: center;
+        }
+        }
+
+        /* Ajouts pour le header */
+        .header-container {
+            min-height: 400px;
+            justify-content: space-between;
+        }
+
+        /* Ajustements pour la photo */
+        .photo-rania-container {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive design amélioré */
+        @media (max-width: 992px) {
+            .header-container {
+                min-height: 300px;
+                padding: 1em;
+            }
+        }
+
+        /* Transitions */
+        .nav a {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animations hover */
+        .logo:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        header {
+    background-color: var(--main-orange);
+    color: var(--white);
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+            .header-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+
+            .logo {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 200px;
+                height: auto;
+            }
+
+            .content {
+                margin: 0 auto;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+</style>
+</head>
+<body>
+    <header>
+        <!-- Logo à gauche -->
+        <img src="logo.png" alt="Logo de Rania" class="logo">
+        
+        <div class="content">
+            <img src="photorania.jpg" alt="Photo de Rania El Hichami" class="photo-rania">
+            <h1>Rania El Hichami</h1>
+            <p>Étudiante en troisième année de BUT Réseaux et Télécommunications parcours Pilotage de Projets Réseaux, apprentie chez Orange</p>
+            <nav>
+                <a href="#moi">À propos</a>
+                <a href="#entreprise">Mon Entreprise</a>
+                <a href="#valeurs">Mes Valeurs</a>
+                <a href="#competences">Mes Compétences</a>
+                <a href="#projets">Projets BUT</a>
+                <a href="#cv">CV</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Section Moi -->
+    <section id="moi" class="section">
+        <h2>Qui suis-je ?</h2>
+    <p>
+        Bonjour, je m’appelle Rania El Hichami, j’ai 21 ans, et je suis en 3ᵉ année de BUT Réseaux et Télécommunications, parcours Pilotage de Projet Réseaux (PILPRO). Depuis deux ans et demi, je suis en alternance chez Orange, où je fais partie de l’équipe dédiée au pilotage d'interventions réseaux et infrastructures. 
+    </p>
+
+    <p>Ce qui m’a attirée vers le domaine des réseaux et télécommunications, c’est l’impact direct de la connectivité sur notre quotidien. Intégrer une entreprise pionnière comme Orange me permet de contribuer à des projets technologiques concrets, tout en renforçant mes compétences en gestion et coordination.</p>
+
+    <p>
+        J’ai également une grande passion pour le management et la gestion de projet, ce qui explique mon choix du parcours PILPRO. Cette spécialisation me permet d’allier mes connaissances techniques à ma volonté de coordonner et piloter des projets. 
+    </p>
+
+    <p>Cette année, je suis également inscrite au programme Les Entrep’, un dispositif entrepreneurial où, avec mon groupe, nous développons une plateforme visant à lutter contre l’isolement des jeunes. Notre projet a pour mission de faciliter les rencontres en proposant des activités variées, culturelles, sportives ou sociales, afin de rétablir l’équilibre entre interactions virtuelles et réelles.</p>
+
+    <p>
+        Pour ceux qui veulent se lancer dans l’alternance en R&T, je dirais qu’il est essentiel de poser des questions et d’être proactif. N’ayez pas peur de prendre des initiatives, même pour des tâches que vous ne maîtrisez pas encore complètement, car chaque expérience est une opportunité d’apprentissage. J’ai réalisé que plus on s’investit et montre de la curiosité, plus on a l’opportunité de développer de nouvelles compétences, et surtout, d’apporter une vraie valeur ajoutée.
+    </p>
+</section>
+
+    <!-- Section Mon Entreprise -->
+    <section id="entreprise" class="section">
+        <h2>Mon Entreprise</h2>
+        <p>
+            Actuellement en troisième année de BUT Réseaux & Télécommunications, j'occupe le poste de <strong>Pilote d'Activité Client et Réseau</strong> chez Orange.
+            Dans ce rôle, je suis responsable de la gestion des dossiers complexes nécessitant un suivi manuel et spécialisé. Je travaille en collaboration avec les équipes en contact avec les clients pour
+            assurer une expérience client de qualité, en analysant, traitant et résolvant les dysfonctionnements potentiels.
+        </p>
+        <p>
+            Mon travail comprend la gestion des dossiers du début à la fin, la priorisation des activités pour respecter les délais de traitement, ainsi que la coordination avec différents acteurs.
+            Je contribue également à l'amélioration continue des processus et outils pour renforcer l'efficacité des opérations.
+        </p>
+        <p>
+            Dans mon poste chez Orange, j’ai eu l’opportunité de travailler sur le pilotage de nos activités pour atteindre nos objectifs de performance. Avec mon équipe, j’ai contribué à trouver des solutions pour optimiser nos processus et atteindre ces différents KPI dans nos activités principales. Grâce à ce travail, nous avons pu renforcer le suivi des indicateurs, et nous atteignons désormais nos objectifs plus régulièrement, ce qui montre l’efficacité de notre approche.
+            Cette expérience m’a vraiment appris à réfléchir de manière stratégique pour l’atteinte d’objectifs concrets et à collaborer avec différents départements pour améliorer notre performance globale. L’alternance, pour moi, c’est la meilleure façon d’appliquer ce qu’on apprend en cours tout en développant de vraies compétences sur le terrain.
+        </p>
+        <h3>Compétences techniques :</h3>
+        <ul>
+            <li>Analyse et traitement des dossiers clients complexes</li>
+            <li>Suivi et résolution des problèmes réseau en transverse</li>
+            <li>Communication et reporting pour faciliter le suivi client</li>
+            <li>Mise en œuvre des procédures métier et sécurité</li>
+        </ul>
+
+        <h3>Compétences humaines :</h3>
+        <ul>
+            <li>Travail en équipe et collaboration interservices</li>
+            <li>Adaptabilité et gestion des priorités</li>
+            <li>Esprit d’analyse et de résolution de problèmes</li>
+            <li>Communication claire et efficace, adaptée aux différents interlocuteurs</li>
+            <li>Gestion de la relation client pour garantir une expérience positive</li>
+        </ul>
+    </section>
+
+    <!-- Section Mes Valeurs avec le carrousel -->
+    <section id="valeurs" class="section">
+        <h2>Mes Valeurs</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <!-- Diapositive 1 - Agilité -->
+                <div class="carousel-item active">
+                    <img src="agilite.png" alt="Agilité">
+                </div>
+                <!-- Diapositive 2 - Amélioration -->
+                <div class="carousel-item">
+                    <img src="amelioration.png" alt="Amélioration">
+                </div>
+                <!-- Diapositive 3 - Collaboration -->
+                <div class="carousel-item">
+                    <img src="colaboration.png" alt="Collaboration">
+                </div>
+                <!-- Diapositive 4 - Engagement Client -->
+                <div class="carousel-item">
+                    <img src="engagementclient.png" alt="Engagement Client">
+                </div>
+                <!-- Diapositive 5 - Excellence Opérationnelle -->
+                <div class="carousel-item">
+                    <img src="excellenceoperationnelle.png" alt="Excellence Opérationnelle">
+                </div>
+                 <!-- Diapositive 6 - Autonomie -->
+                 <div class="carousel-item">
+                    <img src="autonomie.png" alt="Autonomie">
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Section Mes Compétences -->
+    <section id="competences" class="section">
+        <h2>Mes Compétences</h2>
+        <div class="skills">
+            <div class="skill">
+                <img src="reseau.jpg" alt="Icône Réseaux">
+                <p>Réseaux</p>
+            </div>
+            <div class="skill">
+                <img src="telecom.jpg" alt="Icône Télécommunications">
+                <p>Télécommunications</p>
+            </div>
+            <div class="skill">
+                <img src="programmer.jpg" alt="Icône Programmation">
+                <p>Programmation</p>
+            </div>
+            <div class="skill">
+                <img src="projet.jpg" alt="Icône PilPro">
+                <p>PilPro</p>
+            </div>
+        </div>
+
+        <div class="competences-details">
+            <p><strong>Réseau</strong> : Grâce à mes études en BUT Réseaux et Télécommunications, j'ai acquis une solide maîtrise des architectures réseau, des protocoles de communication et des techniques de gestion des infrastructures réseau, ce qui me permet de concevoir et d'optimiser des réseaux efficaces.</p>
+        
+            <p><strong>Télécommunication</strong> : Ma formation m'a permis d'approfondir mes connaissances sur les technologies de transmission de données, de la téléphonie mobile aux réseaux IP, me rendant capable de comprendre et de mettre en œuvre des solutions de communication modernes.</p>
+    
+            <p><strong>Programmation</strong> : Je suis capable de coder des applications simples en utilisant des langages comme Python, Java ou C++, et j'ai une compréhension de base de la programmation orientée objet et des algorithmes, ce qui me permet de développer des projets adaptés à des besoins spécifiques.</p>
+    
+            <p><strong>PilPro (Pilotage de Projet)</strong> : Grâce à ma spécialisation en gestion de projet, j'ai appris à coordonner des équipes, à planifier des projets techniques et à suivre leur avancement, ce qui me permet de piloter efficacement des projets en réseau et télécommunication, en respectant les délais et les exigences.</p>
+        </div>
+
+    </section>
+
+    <!-- Section Projets BUT -->
+<section id="projets" class="section">
+    <h2>Projets BUT</h2>
+    <p>Voici quelques exemples de projets sur lesquels j'ai travaillé dans le cadre de mon BUT Réseaux & Télécommunications :</p>
+    <ul>
+        <li>
+            <strong>SAE 202 "Mesurer et caractériser un signal ou un système"</strong>: 
+            Durant cette SAE, j'ai eu l'occasion de travailler sur la configuration d'un serveur FreePBX et de réaliser des tests de communication VoIP en utilisant le logiciel Linphone. Nous avons mesuré différents paramètres de qualité du signal tels que la bande passante, le rapport signal sur bruit (SNR) et le spectre, tout en expérimentant l'impact de divers codecs sur la qualité audio. Cette SAE m'a permis d'acquérir des compétences en configuration de systèmes VoIP, en prise de mesures techniques avec des outils comme l'oscilloscope et le GBF, ainsi qu'en analyse des performances des codecs.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong>SAE 301 "Mettre en œuvre un système de transmission"</strong>: 
+            Durant cette SAE, j'ai mis en œuvre un système de transmission de données en utilisant des technologies telles que le Raspberry Pi, Zigbee, PHP, MySQL et Lighttpd. J'ai configuré un réseau et un serveur web, intégré des graphiques interactifs avec Highcharts, et récupéré des données en temps réel via Zigbee. J'ai également travaillé sur la sécurisation du site web, l'ajout d'un accès Wi-Fi et l'automatisation des processus.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong>SAE 302 "Développer des applications communicantes"</strong>: 
+            Lors de cette SAE, nous avons créé une application client-serveur de messagerie instantanée en utilisant le langage Java. Le projet a impliqué la gestion de connexions multiples et la manipulation de données en mémoire pour permettre à plusieurs utilisateurs d’échanger des messages instantanés après avoir accepté des invitations d’amitié. Nous avons utilisé le protocole UDP pour assurer une communication fluide entre le client et le serveur.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong>SAE 401 "Piloter des solutions de sécurité"</strong>: 
+            Lors de cette SAE, j'ai eu l'opportunité de répondre à un appel d'offre pour la première fois, ce qui m'a permis de développer des compétences pratiques dans la gestion de projets de sécurité informatique. J'ai appris à analyser les besoins d'un client, à proposer des solutions techniques adaptées, et à élaborer des documents détaillant les aspects techniques et financiers d'une offre.
+        </li>
+    </ul>
+</section>
+
+
+    <!-- Section CV -->
+    <section id="cv" class="section">
+        <h2>CV</h2>
+        <p>Pour en savoir plus sur mon parcours, vous pouvez télécharger mon CV en cliquant sur le lien ci-dessous :</p>
+        <a href="CV_Rania_El_Hichami.pdf" download>Télécharger mon CV</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rania El Hichami - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const items = document.querySelectorAll('.carousel-item');
+            if (index >= items.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = items.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+    </script>
+</body>
+</html>
